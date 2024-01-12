@@ -1,0 +1,10 @@
+{
+	"files.associations": {
+		"mlx.h": "c",
+		"mlx42.h": "c",
+		"string.h": "c",
+		"atomic": "c",
+		"cstdint": "c",
+		"so_long.h": "c"
+	}
+}
