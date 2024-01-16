@@ -5,6 +5,11 @@
 		"string.h": "c",
 		"atomic": "c",
 		"cstdint": "c",
-		"so_long.h": "c"
-	}
+		"so_long.h": "c",
+		"memory.h": "c",
+		"libft.h": "c",
+		"get_next_line.h": "c",
+		"ft_printf.h": "c"
+	},
+	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }
