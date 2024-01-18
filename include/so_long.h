@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/18 18:31:55 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/18 18:51:02 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ typedef struct s_main
 	mlx_image_t		*img;
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
-	mlx_texture_t	*enemie[NUM_CHARACTERE];
+	// mlx_texture_t	*enemie[NUM_CHARACTERE];
 	mlx_texture_t	*maps_textures[NUM_TEXTURE];
 	int				x;
 	int				y;

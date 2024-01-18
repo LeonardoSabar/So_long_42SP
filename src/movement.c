@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/18 18:36:20 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:08:26 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	movement(mlx_key_data_t keydata, void* param)
 			game->x += MOVE;
 			game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_DOWN]);
 		}
-		mlx_resize_image(game->img, 100, 100);
-		mlx_image_to_window(game->mlx, game->img, game->x, game->y);
+		// mlx_resize_image(game->img, 32, 32);
+		// mlx_image_to_window(game->mlx, game->img, game->x, game->y);
 	}
 }

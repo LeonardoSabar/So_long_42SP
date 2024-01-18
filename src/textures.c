@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/18 18:31:23 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/18 19:08:41 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	get_textures(t_main *game)
 {
-	// game->characteres[INICIAL] = mlx_load_png("images/cha.png");
+	game->characteres[INICIAL] = mlx_load_png("images/duck.png");
 	// game->characteres[WALK_LEFT] = mlx_load_png("images/cha1.png");
 	// game->characteres[WALK_RIGHT] = mlx_load_png("images/cha2.png");
 	// game->characteres[WALK_UP] = mlx_load_png("images/cha3.png");
@@ -24,8 +24,8 @@ void	get_textures(t_main *game)
 }
 void	get_images(t_main *game)
 {
-	// game->images[IMG_INICIAL] = mlx_texture_to_image(game->mlx,
-	// 	game->characteres[INICIAL]);
+	game->images[IMG_INICIAL] = mlx_texture_to_image(game->mlx,
+		game->characteres[INICIAL]);
 	// game->images[IMG_WALK_LEFT] = mlx_texture_to_image(game->mlx,
 	// 	game->characteres[WALK_LEFT]);
 	// game->images[IMG_WALK_RIGHT] = mlx_texture_to_image(game->mlx,
@@ -35,9 +35,9 @@ void	get_images(t_main *game)
 	// game->images[IMG_WALK_DOWN] = mlx_texture_to_image(game->mlx,
 	// 	game->characteres[WALK_DOWN]);
 	game->images[IMG_WALL] = mlx_texture_to_image(game->mlx,
-		game->characteres[WALL]);
+		game->maps_textures[WALL]);
 	game->images[IMG_FLOOR]= mlx_texture_to_image(game->mlx,
-		game->characteres[FLOOR]);
+		game->maps_textures[FLOOR]);
 	// game->main->images[IMG_EXIT] = mlx_texture_to_image(game->mlx,
 	// 	game->main->characteres[EXIT]);
 	// game->main->images[IMG_ENEMIE] = mlx_texture_to_image(game->mlx,
@@ -54,12 +54,13 @@ void	draw_floor(t_main *game)
 		width = 0;
 		while (game->map[height][width])
 		{
-			mlx_image_to_window(game->mlx, game->images[IMG_FLOOR], height * 32, width * 32);
+			mlx_image_to_window(game->mlx, game->images[IMG_FLOOR], width * 32, height * 32);
 			if (game->map[height][width] == '1')
-			{
-				mlx_image_to_window(game->mlx, game->images[IMG_WALL], height * 32, width * 32);
-				width++;
-			}
+				mlx_image_to_window(game->mlx, game->images[IMG_WALL], width * 32, height * 32);
+			else if (game->map[height][width] == 'P')
+				mlx_image_to_window(game->mlx, game->images[IMG_INICIAL], width * 32, height * 32);
+
+			width++;
 		}
 		height++;
 	}
