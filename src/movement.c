@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 20:08:15 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:14:23 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,26 @@ void	movement(mlx_key_data_t keydata, void* param)
 	if (keydata.action == MLX_PRESS)
 	{
 		mlx_delete_image(game->mlx, game->main->img);
-		game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[INCIAL]);
+		game->main->img = mlx_texture_to_image(game->mlx, game->main->characteres[INICIAL]);
 		if (DIR_W || DIR_UP)
 		{
 			game->main->y -= MOVE;
-			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_LEFT]);
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->characteres[WALK_LEFT]);
 		}
 		else if (DIR_S || DIR_DOWN)
 		{
 			game->main->y += MOVE;
-			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_RIGHT]);
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->characteres[WALK_RIGHT]);
 		}
 		else if (DIR_A || DIR_LEFT)
 		{
 			game->main->x -= MOVE;
-			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_UP]);
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->characteres[WALK_UP]);
 		}
 		else if (DIR_D || DIR_RIGHT)
 		{
 			game->main->x += MOVE;
-			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_DOWN]);
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->characteres[WALK_DOWN]);
 		}
 		mlx_resize_image(game->main->img, 100, 100);
 		mlx_image_to_window(game->mlx, game->main->img, game->main->x, game->main->y);
