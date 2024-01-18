@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 16:01:37 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:13:25 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,17 @@
 # define HEIGHT 720
 # define FALSE 1
 # define TRUE 0
-# define MOVE 10
+# define MOVE 100
 # define BUFFER 10000
 # define NUM_CHARACTERE 5
 # define NUM_TEXTURE 4
 
 # define EMPTY_MSG "Error\nEmpty map\n"
 # define RECTANGLE_MSG "Error\nMap is not a rectangle\n"
-# define WRONG_MSG "Error\nMap has wrongs components\n"
+# define ELEMENTS_MSG "Error\nMap has wrongs components\n"
 # define WALL_MSG "Error\nMap don't have close walls\n"
+# define PARAMETERS_MSG "Error\n It requires 2 parameters\n"
+
 
 # define DIR_W keydata.key == MLX_KEY_W
 # define DIR_S keydata.key == MLX_KEY_S
@@ -80,6 +82,7 @@ typedef struct s_game
 {
 	char	**map;
 	t_main	*main;
+	mlx_t*	mlx;
 }	t_game;
 
 
@@ -91,5 +94,7 @@ int		check_extension(char *file);
 int		wrong_map(char **map);
 int		wall_map(char **map);
 size_t	ft_strlen(const char *s);
+void	get_textures(t_game *game);
+int		game_init(t_game *game);
 
 #endif

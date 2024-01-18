@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 16:52:32 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:24:09 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int check_map(char **map)
 	}
 	if (wrong_map(map) == FALSE)
 	{
-		ft_printf(WRONG_MSG, 1);
+		ft_printf(ELEMENTS_MSG, 1);
 		return (FALSE);
 	}
 	if (wall_map(map) == FALSE)

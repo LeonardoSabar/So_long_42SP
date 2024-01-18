@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 16:19:32 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:24:43 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,35 @@
 
 void	hook(void* param)
 {
-	t_main* main;
+	t_game* game;
 
-	main = param;
-	if (mlx_is_key_down(main->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(main->mlx);
+	game = param;
+	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(game->mlx);
 
+}
+
+int	game_init(t_game *game)
+{
+	game->mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
+	if (!game->mlx)
+		exit(EXIT_FAILURE);
+	get_textures(game);
+	return (TRUE);
 }
 
 int	main(int argc, char **argv)
 {
-	mlx_t*	mlx;
 	t_main	main;
 	t_game	game;
 
 	if (argc != 2)
 		return (EXIT_FAILURE);
 	if (check_extension(argv[1]) == FALSE)
+	{
+		ft_printf(PARAMETERS_MSG, 1);
 		return (EXIT_FAILURE);
+	}
 	game.map = read_map(argv[1]);
 	if (!game.map)
 		return (EXIT_FAILURE);
@@ -47,30 +58,15 @@ int	main(int argc, char **argv)
 		free (game.map);
 		return (EXIT_FAILURE);
 	}
-	mlx = mlx_init(WIDTH, HEIGHT, "so_long", true);
-	if (!mlx)
-		exit(EXIT_FAILURE);
-
-	main.charactere[INCIAL] = mlx_load_png("images/cha.png");
-	main.charactere[WALK_LEFT] = mlx_load_png("images/cha1.png");
-	main.charactere[WALK_RIGHT] = mlx_load_png("images/cha2.png");
-	main.charactere[WALK_UP] = mlx_load_png("images/cha3.png");
-	main.charactere[WALK_DOWN] = mlx_load_png("images/cha4.png");
-	// if (!texture)
-    //     error();
-	main.img = mlx_texture_to_image(mlx, main.charactere[INCIAL]);
-	// if (!main.img)
-    //     error();
-	mlx_resize_image(main.img, 100, 100);
-	mlx_image_to_window(mlx, main.img, 0, 0);
-
-	main.mlx = mlx;
+	if (game_init(&game) == FALSE)
+		return (1);
+		
 	main.x = 0;
 	main.y = 0;
 
-	mlx_loop_hook(mlx, &hook, &main);
-	mlx_key_hook(mlx, &movement, &main);
-	mlx_loop(mlx);
-	mlx_terminate(mlx);
+	mlx_loop_hook(game.mlx, hook, &game);
+	mlx_key_hook(game.mlx, movement, &game);
+	mlx_loop(game.mlx);
+	mlx_terminate(game.mlx);
 	return (EXIT_SUCCESS);
 }

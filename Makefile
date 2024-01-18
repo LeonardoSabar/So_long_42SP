@@ -28,9 +28,9 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
-	@rm -rf $(LIBMLX)/build
-	@make -C ${LIBFT} clean
-	@make -C ${PRINTF} clean
+#	@rm -rf $(LIBMLX)/build
+#	@make -C ${LIBFT} clean
+#	@make -C ${PRINTF} clean
 
 fclean: clean
 	@rm -rf $(NAME)

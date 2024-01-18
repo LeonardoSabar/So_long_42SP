@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 16:09:54 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:08:15 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,35 @@
 
 void	movement(mlx_key_data_t keydata, void* param)
 {
-	t_main* main;
+	t_game* game;
 
-	main = (t_main *)param;
+	game = (t_game *)param;
 
 	if (keydata.action == MLX_PRESS)
 	{
-		mlx_delete_image(main->mlx, main->img);
-		main->img = mlx_texture_to_image(main->mlx, main->charactere[INCIAL]);
+		mlx_delete_image(game->mlx, game->main->img);
+		game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[INCIAL]);
 		if (DIR_W || DIR_UP)
 		{
-			main->y -= MOVE;
-			main->img = mlx_texture_to_image(main->mlx, main->charactere[WALK_LEFT]);
+			game->main->y -= MOVE;
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_LEFT]);
 		}
 		else if (DIR_S || DIR_DOWN)
 		{
-			main->y += MOVE;
-			main->img = mlx_texture_to_image(main->mlx, main->charactere[WALK_RIGHT]);
+			game->main->y += MOVE;
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_RIGHT]);
 		}
 		else if (DIR_A || DIR_LEFT)
 		{
-			main->x -= MOVE;
-			main->img = mlx_texture_to_image(main->mlx, main->charactere[WALK_UP]);
+			game->main->x -= MOVE;
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_UP]);
 		}
 		else if (DIR_D || DIR_RIGHT)
 		{
-			main->x += MOVE;
-			main->img = mlx_texture_to_image(main->mlx, main->charactere[WALK_DOWN]);
+			game->main->x += MOVE;
+			game->main->img = mlx_texture_to_image(game->mlx, game->main->charactere[WALK_DOWN]);
 		}
-		mlx_resize_image(main->img, 100, 100);
-		mlx_image_to_window(main->mlx, main->img, main->x, main->y);
+		mlx_resize_image(game->main->img, 100, 100);
+		mlx_image_to_window(game->mlx, game->main->img, game->main->x, game->main->y);
 	}
 }
