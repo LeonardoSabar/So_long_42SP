@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/19 11:09:21 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/19 15:59:04 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ typedef struct s_main
 {
 	char			**map;
 	mlx_t			*mlx;
+	int				width_tile;
+	int				height_tile;
 	mlx_image_t		*img;
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
@@ -95,5 +97,6 @@ int		game_init(t_main *game);
 void	draw_base_map(t_main *game);
 void	draw_elements(t_main *game);
 void	get_images(t_main *game);
+void	start_pos(t_main *game);
 
 #endif
