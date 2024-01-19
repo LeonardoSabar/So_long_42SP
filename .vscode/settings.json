@@ -9,7 +9,12 @@
 		"memory.h": "c",
 		"libft.h": "c",
 		"get_next_line.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"*.tcc": "c",
+		"random": "c",
+		"limits": "c",
+		"functional": "c",
+		"bit": "c"
 	},
 	"C_Cpp.default.compilerPath": "/usr/bin/gcc"
 }

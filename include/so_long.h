@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/18 18:51:02 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/19 11:09:21 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,28 +26,17 @@
 # define HEIGHT 720
 # define FALSE 1
 # define TRUE 0
-# define MOVE 100
+# define MOVE 64
 # define BUFFER_SIZE 50
 # define NUM_CHARACTERE 6
 # define NUM_TEXTURE 4
-# define NUM_IMAGES 9
+# define NUM_IMAGES 10
 
 # define EMPTY_MSG "Error\nEmpty map\n"
 # define RECTANGLE_MSG "Error\nMap is not a rectangle\n"
 # define ELEMENTS_MSG "Error\nMap has wrongs components\n"
 # define WALL_MSG "Error\nMap don't have close walls\n"
 # define PARAMETERS_MSG "Error\n It requires 2 parameters\n"
-
-
-# define DIR_W keydata.key == MLX_KEY_W
-# define DIR_S keydata.key == MLX_KEY_S
-# define DIR_A keydata.key == MLX_KEY_A
-# define DIR_D keydata.key == MLX_KEY_D
-
-# define DIR_UP keydata.key == MLX_KEY_UP
-# define DIR_DOWN keydata.key == MLX_KEY_DOWN
-# define DIR_LEFT keydata.key == MLX_KEY_LEFT
-# define DIR_RIGHT keydata.key == MLX_KEY_RIGHT
 
 enum e_characteres
 {
@@ -88,7 +77,6 @@ typedef struct s_main
 	mlx_image_t		*img;
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
-	// mlx_texture_t	*enemie[NUM_CHARACTERE];
 	mlx_texture_t	*maps_textures[NUM_TEXTURE];
 	int				x;
 	int				y;
@@ -104,7 +92,8 @@ int		wall_map(char **map);
 size_t	ft_strlen(const char *s);
 void	get_textures(t_main *game);
 int		game_init(t_main *game);
-void	draw_floor(t_main *game);
+void	draw_base_map(t_main *game);
+void	draw_elements(t_main *game);
 void	get_images(t_main *game);
 
 #endif
