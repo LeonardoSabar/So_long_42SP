@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/19 18:04:22 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/20 11:38:06 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	movement(mlx_key_data_t keydata, void* param)
 
 	if (keydata.action == MLX_PRESS)
 	{
+		count_collectable(game);
 		mlx_delete_image(game->mlx, game->img);
 		mlx_delete_image(game->mlx, game->images[IMG_INICIAL]);
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[INICIAL]);
