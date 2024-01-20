@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/20 11:34:47 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:15:15 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,6 @@ void	draw_base_map(t_main *game);
 void	draw_elements(t_main *game);
 void	get_images(t_main *game);
 void	start_pos(t_main *game);
-void	count_collectable(t_main *game);
+void	count_collectible(t_main *game);
 
 #endif

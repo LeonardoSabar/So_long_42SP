@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/20 11:14:04 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/20 12:17:18 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	get_textures(t_main *game)
 	game->characteres[WALK_RIGHT] = mlx_load_png("images/2cha64.png");
 	game->characteres[WALK_UP] = mlx_load_png("images/3cha64.png");
 	game->characteres[WALK_DOWN] = mlx_load_png("images/4cha64.png");
-	game->maps_textures[FLOOR] = mlx_load_png("images/floor64.png");
+	game->maps_textures[FLOOR] = mlx_load_png("images/grass2.png");
 	game->maps_textures[WALL] = mlx_load_png("images/wall64.png");
-	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/colle64.png");
+	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/21.png");
 	game->maps_textures[EXIT] = mlx_load_png("images/portal.png");
 	// game->characteres[ENEMIE] = mlx_load_png("images/18.png");
 }

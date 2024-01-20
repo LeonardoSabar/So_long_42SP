@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/20 11:38:06 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/20 15:15:54 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	movement(mlx_key_data_t keydata, void* param)
 
 	if (keydata.action == MLX_PRESS)
 	{
-		count_collectable(game);
+		count_collectible(game);
 		mlx_delete_image(game->mlx, game->img);
 		mlx_delete_image(game->mlx, game->images[IMG_INICIAL]);
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[INICIAL]);
@@ -74,7 +74,13 @@ void	movement(mlx_key_data_t keydata, void* param)
 			move_left(game);
 		else if (keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT)
 			move_right(game);
-		mlx_resize_image(game->img, 64, 64);
+		mlx_image_to_window(game->mlx, game->img, game->x, game->y);
+	}
+	else if
+		(keydata.action == MLX_RELEASE)
+	{
+		mlx_delete_image(game->mlx, game->img);
+		game->img = mlx_texture_to_image(game->mlx, game->characteres[INICIAL]);
 		mlx_image_to_window(game->mlx, game->img, game->x, game->y);
 	}
 }
