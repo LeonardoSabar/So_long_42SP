@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/19 15:58:35 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:44:44 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	screen_resize(t_main *game)
 	int	map_width;
 	int	map_height;
 
-	mlx_set_setting(MLX_STRETCH_IMAGE, false);
+	mlx_set_setting(MLX_STRETCH_IMAGE, true);
 	map_width = 0;
 	map_height = 0;
 	while (game->map[0][map_width])
@@ -30,6 +30,7 @@ void	screen_resize(t_main *game)
 	if (!game->mlx)
 		exit(EXIT_FAILURE);
 }
+
 int	game_init(t_main *game)
 {
 	screen_resize(game);
@@ -37,6 +38,8 @@ int	game_init(t_main *game)
 	get_images(game);
 	start_pos(game);
 	draw_elements(game);
+	count_collectible(game);
+	mlx_put_string(game->mlx, "MOVEMENTS: ", 0, 0);
 	return (TRUE);
 }
 
@@ -62,7 +65,6 @@ int	main(int argc, char **argv)
 	if (game_init(&main) == FALSE)
 		return (1);
 	mlx_key_hook(main.mlx, movement, &main);
-	// mlx_loop_hook(main.mlx, frame, &main)// BONUS
 	mlx_loop(main.mlx);
 	mlx_terminate(main.mlx);
 	return (EXIT_SUCCESS);

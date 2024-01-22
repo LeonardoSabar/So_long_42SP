@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:23:26 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/20 16:37:24 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:46:21 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	pick_collectibles(t_main *game)
 				(game->map[game->y / 64][game->x / 64] = '0');
 				draw_elements(game);
 				game->collectable--;
+				ft_printf("%d\n", game->collectable);
 				return ;
 			}
 			odx++;
@@ -35,12 +36,13 @@ void	pick_collectibles(t_main *game)
 		idx++;
 	}
 }
+
 void	count_collectible(t_main *game)
 {
 	int	idx;
 	int	odx;
 
-	pick_collectibles(game);
+	// pick_collectibles(game);
 	idx = 0;
 	while (game->map[idx])
 	{
@@ -54,4 +56,3 @@ void	count_collectible(t_main *game)
 		idx++;
 	}
 }
-

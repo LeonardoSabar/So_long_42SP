@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:30:48 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/20 15:24:24 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/22 20:06:26 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	start_pos(t_main *game)
 	int	idx;
 	int	odx;
 
+	game->last_state = INICIAL;
 	idx = 0;
 	while (game->map[idx])
 	{

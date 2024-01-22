@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 08:41:49 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/22 19:47:48 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@
 # define MOVE 64
 # define BUFFER_SIZE 50
 # define NUM_CHARACTERE 6
-# define NUM_TEXTURE 4
-# define NUM_IMAGES 10
+# define NUM_TEXTURE 6
+# define NUM_IMAGES 12
 
 # define EMPTY_MSG "Error\nEmpty map\n"
 # define RECTANGLE_MSG "Error\nMap is not a rectangle\n"
@@ -41,6 +41,7 @@
 enum e_characteres
 {
 	INICIAL = 0,
+	INICIAL2,
 	WALK_LEFT,
 	WALK_RIGHT,
 	WALK_UP,
@@ -53,12 +54,14 @@ enum e_maps_textures
 	WALL = 0,
 	FLOOR,
 	EXIT,
+	EXIT_OPEN,
 	COLLECTIBLE,
 };
 
 enum e_images
 {
 	IMG_INICIAL = 0,
+	IMG_INICIAL2,
 	IMG_WALK_LEFT,
 	IMG_WALK_RIGHT,
 	IMG_WALK_UP,
@@ -66,6 +69,7 @@ enum e_images
 	IMG_WALL,
 	IMG_FLOOR,
 	IMG_EXIT,
+	IMG_EXIT_OPEN,
 	IMG_ENEMIE,
 	IMG_COLLECTIBLE,
 };
@@ -83,9 +87,11 @@ typedef struct s_main
 	int				height_tile;
 	int				x;
 	int				y;
+	int				last_state;
 }	t_main;
 
 void	movement(mlx_key_data_t keydata, void* param);
+mlx_image_t	*texture_to_image_resized(t_main *game, void *texture);
 int		main(int argc, char **argv);
 int		check_map(char **map);
 char	**read_map(char *map_content);
@@ -100,5 +106,6 @@ void	draw_elements(t_main *game);
 void	get_images(t_main *game);
 void	start_pos(t_main *game);
 void	count_collectible(t_main *game);
+void	pick_collectibles(t_main *game);
 
 #endif

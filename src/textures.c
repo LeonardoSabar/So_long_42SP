@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 09:32:21 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/22 18:45:31 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	get_textures(t_main *game)
 {
 	game->characteres[INICIAL] = mlx_load_png("images/immobile.png");
+	game->characteres[INICIAL2] = mlx_load_png("images/immobile2.png");
 	game->characteres[WALK_LEFT] = mlx_load_png("images/left.png");
 	game->characteres[WALK_RIGHT] = mlx_load_png("images/right.png");
 	game->characteres[WALK_UP] = mlx_load_png("images/up.png");
@@ -22,7 +23,8 @@ void	get_textures(t_main *game)
 	game->maps_textures[FLOOR] = mlx_load_png("images/grass2.png");
 	game->maps_textures[WALL] = mlx_load_png("images/wall64.png");
 	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/21.png");
-	game->maps_textures[EXIT] = mlx_load_png("images/portal.png");
+	game->maps_textures[EXIT] = mlx_load_png("images/chest1.png");
+	game->maps_textures[EXIT_OPEN] = mlx_load_png("images/chest2.png");
 	// game->characteres[ENEMIE] = mlx_load_png("images/18.png");
 }
 
@@ -39,6 +41,8 @@ void	get_images(t_main *game)
 {
 	game->images[IMG_INICIAL] = texture_to_image_resized(game,
 		game->characteres[INICIAL]);
+	game->images[IMG_INICIAL2] = texture_to_image_resized(game,
+		game->characteres[INICIAL2]);
 	game->images[IMG_WALK_LEFT] = texture_to_image_resized(game,
 		game->characteres[WALK_LEFT]);
 	game->images[IMG_WALK_RIGHT] = texture_to_image_resized(game,
@@ -55,6 +59,8 @@ void	get_images(t_main *game)
 		game->maps_textures[COLLECTIBLE]);
 	game->images[IMG_EXIT] = texture_to_image_resized(game,
 		game->maps_textures[EXIT]);
+	game->images[IMG_EXIT_OPEN] = texture_to_image_resized(game,
+		game->maps_textures[EXIT_OPEN]);
 	// game->images[IMG_ENEMIE] = texture_to_image_resized(game,
 	// 	game->characteres[ENEMIE]);
 }
