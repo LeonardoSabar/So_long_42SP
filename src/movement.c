@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 09:39:42 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 11:18:14 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	ft_movement(mlx_key_data_t keydata, void* param)
 	t_main* game;
 
 	game = (t_main *)param;
+
+	// mlx_put_string(game->mlx, "MOVEMENTS: ", 0, 0);
 	ft_exit_game(game);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(game->mlx);

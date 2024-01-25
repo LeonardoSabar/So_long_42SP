@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 09:37:52 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:48:23 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	ft_chest_position(t_main *game)
 }
 void	ft_exit_game(t_main *game)
 {
-	if ((game->collectable <= 0) && (game->map[game->y / 64][game->x / 64] ==  'E'))
+	if ((game->collectable <= 0) &&
+			(game->map[game->y / 64][game->x / 64] ==  'E'))
 		mlx_close_window(game->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 09:34:16 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 10:42:05 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	ft_game_init(t_main *game)
 	ft_get_textures(game);
 	ft_get_images(game);
 	ft_draw_elements(game);
-	mlx_put_string(game->mlx, "MOVEMENTS: ", 0, 0);
 	return (TRUE);
 }
 
