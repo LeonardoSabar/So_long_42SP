@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 08:37:20 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:23:46 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,28 +92,49 @@ typedef struct s_main
 	int				last_state;
 }	t_main;
 
-//validation.c
-int	ft_validation_map(char **map);
-int	ft_check_elements(char **map);
-int	ft_wall_check(char **map);
-int	ft_empty_map(char **map);
-int	ft_rectangle_map(char **map);
-
 //main.c
 int		main(int argc, char **argv);
 int		ft_game_init(t_main *game);
 void	ft_screen_resize(t_main *game);
 
+//validation.c
+int		ft_validation_map(char **map);
+int		ft_check_elements(char **map);
+int		ft_wall_check(char **map);
+int		ft_empty_map(char **map);
+int		ft_rectangle_map(char **map);
 
-void	movement(mlx_key_data_t keydata, void* param);
-char	**read_map(char *map_content);
-int		check_extension(char *file);
-void	get_textures(t_main *game);
-void	draw_base_map(t_main *game);
-void	draw_elements(t_main *game);
-void	get_images(t_main *game);
-void	start_pos(t_main *game);
-void	count_collectible(t_main *game);
-void	pick_collectibles(t_main *game);
+//textures.c
+void	ft_get_textures(t_main *game);
+void	ft_draw_base_map(t_main *game);
+void	ft_draw_elements(t_main *game);
+
+//images.c
+void	ft_get_images(t_main *game);
+void	ft_images_elements(t_main *game);
+void	ft_images_character(t_main *game);
+
+//movement.c
+void	ft_movement(mlx_key_data_t keydata, void* param);
+void	ft_move_up(t_main *game);
+void	ft_move_down(t_main *game);
+void	ft_move_left(t_main *game);
+void	ft_move_right(t_main *game);
+
+//exit.c
+void	ft_chest_position(t_main *game);
+void	ft_exit_game(t_main *game);
+
+//utils.c
+void	ft_start_pos(t_main *game);
+
+//map.c
+char	**ft_read_map(char *map_content);
+int		ft_check_extension(char *file);
+// static char	*ft_read_all(int fd);
+
+//collectibles.c
+void	ft_count_collectible(t_main *game);
+void	ft_pick_collectibles(t_main *game);
 
 #endif

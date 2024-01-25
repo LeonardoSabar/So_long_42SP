@@ -6,13 +6,13 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:10:00 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/18 15:12:09 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 09:07:36 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_extension(char *file)
+int	ft_check_extension(char *file)
 {
 	int	i;
 
@@ -47,7 +47,7 @@ static char	*ft_read_all(int fd)
 	return (file_string);
 }
 
-char	**read_map(char *map_content)
+char	**ft_read_map(char *map_content)
 {
 	int		fd;
 	char	*temp_map;
