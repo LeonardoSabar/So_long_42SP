@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/23 15:42:50 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:49:21 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ int ft_empty_map(char **map)
 	if (map[0])
 		return (TRUE);
 	else
+	{
+		ft_printf(EMPTY_MSG, 1);
 		return (FALSE);
+	}
 }
 
 int	ft_rectangle_map(char **map)
@@ -30,7 +33,10 @@ int	ft_rectangle_map(char **map)
 	while (map[idx])
 	{
 		if (len != ft_strlen(map[idx]))
+		{
+			ft_printf(RECTANGLE_MSG, 1);
 			return (FALSE);
+		}
 		else
 			idx++;
 	}
@@ -86,16 +92,8 @@ int	ft_wall_check(char **map)
 }
 int	ft_validation_map(char **map)
 {
-	if (ft_empty_map(map) == FALSE)
-	{
-		ft_printf(EMPTY_MSG, 1);
-		return (FALSE);
-	}
-	if (ft_rectangle_map(map) == FALSE)
-	{
-		ft_printf(RECTANGLE_MSG, 1);
-		return (FALSE);
-	}
+	ft_empty_map(map);
+	ft_rectangle_map(map);
 	if (ft_check_elements(map) == FALSE)
 	{
 		ft_printf(ELEMENTS_MSG, 1);

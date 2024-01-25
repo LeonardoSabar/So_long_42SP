@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 09:23:46 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 13:41:40 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@
 # define ELEMENTS_MSG "Error\nMap has wrongs components\n"
 # define WALL_MSG "Error\nMap don't have close walls\n"
 # define PARAMETERS_MSG "Error\n It requires 2 parameters\n"
+# define EXTENSION_MSG "Error\nFile extension is not .ber\n"
+# define NUMBER_PLAYER_MSG "Error\nMap has more than one player\n"
+# define NUMBER_EXIT_MSG "Error\nMap has more than one exit\n"
 
 enum e_characteres
 {
