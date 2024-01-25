@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 18:45:31 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 08:37:16 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,29 @@ void	get_textures(t_main *game)
 	// game->characteres[ENEMIE] = mlx_load_png("images/18.png");
 }
 
-mlx_image_t	*texture_to_image_resized(t_main *game, void *texture)
-{
-	mlx_image_t	*image;
-
-	image = mlx_texture_to_image(game->mlx, texture);
-	// mlx_resize_image(image, game->width_tile, game->height_tile);
-	return (image);
-}
-
 void	get_images(t_main *game)
 {
-	game->images[IMG_INICIAL] = texture_to_image_resized(game,
+	game->images[IMG_INICIAL] = mlx_texture_to_image(game->mlx,
 		game->characteres[INICIAL]);
-	game->images[IMG_INICIAL2] = texture_to_image_resized(game,
+	game->images[IMG_INICIAL2] = mlx_texture_to_image(game->mlx,
 		game->characteres[INICIAL2]);
-	game->images[IMG_WALK_LEFT] = texture_to_image_resized(game,
+	game->images[IMG_WALK_LEFT] = mlx_texture_to_image(game->mlx,
 		game->characteres[WALK_LEFT]);
-	game->images[IMG_WALK_RIGHT] = texture_to_image_resized(game,
+	game->images[IMG_WALK_RIGHT] = mlx_texture_to_image(game->mlx,
 		game->characteres[WALK_RIGHT]);
-	game->images[IMG_WALK_UP] = texture_to_image_resized(game,
+	game->images[IMG_WALK_UP] = mlx_texture_to_image(game->mlx,
 		game->characteres[WALK_UP]);
-	game->images[IMG_WALK_DOWN] = texture_to_image_resized(game,
+	game->images[IMG_WALK_DOWN] = mlx_texture_to_image(game->mlx,
 		game->characteres[WALK_DOWN]);
-	game->images[IMG_WALL] = texture_to_image_resized(game,
+	game->images[IMG_WALL] = mlx_texture_to_image(game->mlx,
 		game->maps_textures[WALL]);
-	game->images[IMG_FLOOR]= texture_to_image_resized(game,
+	game->images[IMG_FLOOR]= mlx_texture_to_image(game->mlx,
 		game->maps_textures[FLOOR]);
-	game->images[IMG_COLLECTIBLE] = texture_to_image_resized(game,
+	game->images[IMG_COLLECTIBLE] = mlx_texture_to_image(game->mlx,
 		game->maps_textures[COLLECTIBLE]);
-	game->images[IMG_EXIT] = texture_to_image_resized(game,
+	game->images[IMG_EXIT] = mlx_texture_to_image(game->mlx,
 		game->maps_textures[EXIT]);
-	game->images[IMG_EXIT_OPEN] = texture_to_image_resized(game,
+	game->images[IMG_EXIT_OPEN] = mlx_texture_to_image(game->mlx,
 		game->maps_textures[EXIT_OPEN]);
 	// game->images[IMG_ENEMIE] = texture_to_image_resized(game,
 	// 	game->characteres[ENEMIE]);

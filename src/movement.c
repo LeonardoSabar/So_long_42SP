@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 20:06:16 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 08:27:11 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,6 @@ void	move_up(t_main *game)
 	}
 }
 
-void	move_left(t_main *game)
-{
-	if (game->map[game->y / 64][game->x / 64 - 1] != '1')
-	{
-		game->x -= MOVE;
-		mlx_delete_image(game->mlx, game->img);
-		game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_LEFT]);
-		game->last_state = WALK_LEFT;
-	}
-}
-
 void	move_down(t_main *game)
 {
 	if (game->map[game->y / 64 + 1][game->x / 64] != '1')
@@ -42,6 +31,17 @@ void	move_down(t_main *game)
 		mlx_delete_image(game->mlx, game->img);
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_DOWN]);
 		game->last_state = WALK_RIGHT;
+	}
+}
+
+void	move_left(t_main *game)
+{
+	if (game->map[game->y / 64][game->x / 64 - 1] != '1')
+	{
+		game->x -= MOVE;
+		mlx_delete_image(game->mlx, game->img);
+		game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_LEFT]);
+		game->last_state = WALK_LEFT;
 	}
 }
 
@@ -56,24 +56,13 @@ void	move_right(t_main *game)
 	}
 }
 
-/////////////////////////////////////////////////////////////////
-// ARRUMA ESSA MERDA AQUI EM BAIXO
-
-typedef struct s_point
-{
-	int x;
-	int y;
-} t_point;
-
-
-t_point	posicao_bau(t_main *game)
+void	chest_position(t_main *game)
 {
 	int	idx;
 	int	odx;
-	t_point	point;
 
-	point.x = -1;
-	point.y = -1;
+	game->chest_position_x = -1;
+	game->chest_position_y = -1;
 	idx = 0;
 	while (game->map[idx])
 	{
@@ -82,18 +71,15 @@ t_point	posicao_bau(t_main *game)
 		{
 			if (game->map[idx][odx] == 'E')
 			{
-				point.x = odx * 64;
-				point.y = idx * 64;
-				return point;
+				game->chest_position_x = odx * 64;
+				game->chest_position_y = idx * 64;
+				return ;
 			}
 			odx++;
 		}
 		idx++;
 	}
-	return (point);
 }
-
-///////////////////////////////////////////////////////////////
 
 void	movement(mlx_key_data_t keydata, void* param)
 {
@@ -106,7 +92,7 @@ void	movement(mlx_key_data_t keydata, void* param)
 	pick_collectibles(game);
 	if (keydata.action == MLX_PRESS)
 	{
-		// mlx_delete_image(game->mlx, game->img);
+		mlx_delete_image(game->mlx, game->img);
 		mlx_delete_image(game->mlx, game->images[IMG_INICIAL]);
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[INICIAL]);
 		if (keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_UP)
@@ -132,13 +118,8 @@ void	movement(mlx_key_data_t keydata, void* param)
 	if (game->collectable == 0)
 	{
 		mlx_delete_image(game->mlx, game->images[IMG_EXIT]);
-		// game->images[EXIT] = game->images[IMG_EXIT_OPEN];
-
-		t_point point = posicao_bau(game);
-
-		mlx_image_to_window(game->mlx, game->images[IMG_EXIT_OPEN], point.x, point.y);
-
-
+		chest_position(game);
+		mlx_image_to_window(game->mlx, game->images[IMG_EXIT_OPEN], game->chest_position_x , game->chest_position_y);
 		game->collectable = -1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 19:47:48 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 08:37:20 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,22 +85,30 @@ typedef struct s_main
 	int				collectable;
 	int				width_tile;
 	int				height_tile;
+	int				chest_position_x;
+	int				chest_position_y;
 	int				x;
 	int				y;
 	int				last_state;
 }	t_main;
 
-void	movement(mlx_key_data_t keydata, void* param);
-mlx_image_t	*texture_to_image_resized(t_main *game, void *texture);
+//validation.c
+int	ft_validation_map(char **map);
+int	ft_check_elements(char **map);
+int	ft_wall_check(char **map);
+int	ft_empty_map(char **map);
+int	ft_rectangle_map(char **map);
+
+//main.c
 int		main(int argc, char **argv);
-int		check_map(char **map);
+int		ft_game_init(t_main *game);
+void	ft_screen_resize(t_main *game);
+
+
+void	movement(mlx_key_data_t keydata, void* param);
 char	**read_map(char *map_content);
 int		check_extension(char *file);
-int		wrong_map(char **map);
-int		wall_map(char **map);
-size_t	ft_strlen(const char *s);
 void	get_textures(t_main *game);
-int		game_init(t_main *game);
 void	draw_base_map(t_main *game);
 void	draw_elements(t_main *game);
 void	get_images(t_main *game);

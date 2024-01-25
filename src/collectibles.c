@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:23:26 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/22 19:46:21 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:48:17 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	count_collectible(t_main *game)
 	int	idx;
 	int	odx;
 
-	// pick_collectibles(game);
+	game->collectable = 0;
 	idx = 0;
 	while (game->map[idx])
 	{

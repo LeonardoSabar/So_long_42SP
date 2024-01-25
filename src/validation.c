@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   validation.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/16 20:24:09 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/23 15:42:50 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int empty_map(char **map)
+int ft_empty_map(char **map)
 {
 	if (map[0])
 		return (TRUE);
@@ -20,7 +20,7 @@ int empty_map(char **map)
 		return (FALSE);
 }
 
-int rectangle_map(char **map)
+int	ft_rectangle_map(char **map)
 {
 	size_t	len;
 	int		idx;
@@ -36,7 +36,7 @@ int rectangle_map(char **map)
 	}
 	return (TRUE);
 }
-int	wrong_map(char **map)
+int	ft_check_elements(char **map)
 {
 	int	idx;
 	int	odx;
@@ -58,7 +58,7 @@ int	wrong_map(char **map)
 	}
 	return (TRUE);
 }
-int	wall_map(char **map)
+int	ft_wall_check(char **map)
 {
 	size_t	idx;
 	size_t	len;
@@ -84,24 +84,24 @@ int	wall_map(char **map)
 	}
 	return (TRUE);
 }
-int check_map(char **map)
+int	ft_validation_map(char **map)
 {
-	if (empty_map(map) == FALSE)
+	if (ft_empty_map(map) == FALSE)
 	{
 		ft_printf(EMPTY_MSG, 1);
 		return (FALSE);
 	}
-	if (rectangle_map(map) == FALSE)
+	if (ft_rectangle_map(map) == FALSE)
 	{
 		ft_printf(RECTANGLE_MSG, 1);
 		return (FALSE);
 	}
-	if (wrong_map(map) == FALSE)
+	if (ft_check_elements(map) == FALSE)
 	{
 		ft_printf(ELEMENTS_MSG, 1);
 		return (FALSE);
 	}
-	if (wall_map(map) == FALSE)
+	if (ft_wall_check(map) == FALSE)
 	{
 		ft_printf(WALL_MSG);
 		return (FALSE);
