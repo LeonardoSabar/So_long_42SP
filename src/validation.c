@@ -6,21 +6,18 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 13:49:21 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:58:39 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int ft_empty_map(char **map)
+int	ft_empty_map(char **map)
 {
 	if (map[0])
 		return (TRUE);
 	else
-	{
-		ft_printf(EMPTY_MSG, 1);
 		return (FALSE);
-	}
 }
 
 int	ft_rectangle_map(char **map)
@@ -33,15 +30,13 @@ int	ft_rectangle_map(char **map)
 	while (map[idx])
 	{
 		if (len != ft_strlen(map[idx]))
-		{
-			ft_printf(RECTANGLE_MSG, 1);
 			return (FALSE);
-		}
 		else
 			idx++;
 	}
 	return (TRUE);
 }
+
 int	ft_check_elements(char **map)
 {
 	int	idx;
@@ -64,6 +59,7 @@ int	ft_check_elements(char **map)
 	}
 	return (TRUE);
 }
+
 int	ft_wall_check(char **map)
 {
 	size_t	idx;
@@ -90,19 +86,22 @@ int	ft_wall_check(char **map)
 	}
 	return (TRUE);
 }
+
 int	ft_validation_map(char **map)
 {
-	ft_empty_map(map);
-	ft_rectangle_map(map);
+	if (ft_empty_map(map) == FALSE)
+		return (ft_putstr_fd(EMPTY_MSG, 2), FALSE);
+	if (ft_rectangle_map(map) == FALSE)
+		return (ft_putstr_fd(RECTANGLE_MSG, 2), FALSE);
 	if (ft_check_elements(map) == FALSE)
-	{
-		ft_printf(ELEMENTS_MSG, 1);
-		return (FALSE);
-	}
+		return (ft_putstr_fd(ELEMENTS_MSG, 2), FALSE);
 	if (ft_wall_check(map) == FALSE)
-	{
-		ft_printf(WALL_MSG);
-		return (FALSE);
-	}
+		return (ft_putstr_fd(WALL_MSG, 2), FALSE);
+	if (ft_count_exit(map) == FALSE)
+		return (ft_putstr_fd(NUMBER_EXIT_MSG, 2), FALSE);
+	if (ft_count_player(map) == FALSE)
+		return (ft_putstr_fd(NUMBER_PLAYER_MSG, 2), FALSE);
+	if (ft_zero_collectible(map) == FALSE)
+		return (ft_putstr_fd(NO_COLLECTUBLE_MSG, 2), FALSE);
 	return (TRUE);
 }

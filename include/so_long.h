@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 13:41:40 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:36:46 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,9 @@
 # define WALL_MSG "Error\nMap don't have close walls\n"
 # define PARAMETERS_MSG "Error\n It requires 2 parameters\n"
 # define EXTENSION_MSG "Error\nFile extension is not .ber\n"
-# define NUMBER_PLAYER_MSG "Error\nMap has more than one player\n"
-# define NUMBER_EXIT_MSG "Error\nMap has more than one exit\n"
+# define NUMBER_PLAYER_MSG "Error\nMap has more or less than one player\n"
+# define NUMBER_EXIT_MSG "Error\nMap has more or less than one exit\n"
+# define NO_COLLECTUBLE_MSG "Error\nMap has no collectibles\n"
 
 enum e_characteres
 {
@@ -118,18 +119,24 @@ void	ft_images_elements(t_main *game);
 void	ft_images_character(t_main *game);
 
 //movement.c
-void	ft_movement(mlx_key_data_t keydata, void* param);
+void	ft_movement(mlx_key_data_t keydata, void *param);
 void	ft_move_up(t_main *game);
 void	ft_move_down(t_main *game);
 void	ft_move_left(t_main *game);
 void	ft_move_right(t_main *game);
 
+//movement2.c
+void	ft_action_key(mlx_key_data_t keydata, t_main *game);
+void	ft_release_key(t_main *game);
+
 //exit.c
 void	ft_chest_position(t_main *game);
+int		ft_count_exit(char **game);
 void	ft_exit_game(t_main *game);
 
 //utils.c
 void	ft_start_pos(t_main *game);
+int		ft_count_player(char **game);
 
 //map.c
 char	**ft_read_map(char *map_content);
@@ -139,5 +146,6 @@ int		ft_check_extension(char *file);
 //collectibles.c
 void	ft_count_collectible(t_main *game);
 void	ft_pick_collectibles(t_main *game);
+int		ft_zero_collectible(char **game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 15:10:00 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 09:07:36 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:08:39 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char	**ft_read_map(char *map_content)
 	char	*temp_map;
 	char	**map;
 	int		count;
-
 
 	count = 0;
 	temp_map = NULL;

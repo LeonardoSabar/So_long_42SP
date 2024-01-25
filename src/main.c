@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 10:42:05 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 18:41:21 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,9 @@ int	main(int argc, char **argv)
 	t_main	main;
 
 	if (argc != 2)
-		return (EXIT_FAILURE);
+		return (ft_putstr_fd(PARAMETERS_MSG, 2), EXIT_FAILURE);
 	if (ft_check_extension(argv[1]) == FALSE)
-	{
-		ft_printf(PARAMETERS_MSG, 1);
-		return (EXIT_FAILURE);
-	}
+		return (ft_putstr_fd(EXTENSION_MSG, 2), EXIT_FAILURE);
 	main.map = ft_read_map(argv[1]);
 	if (!main.map)
 		return (EXIT_FAILURE);

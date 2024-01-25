@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 11:41:18 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:10:13 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_get_textures(t_main *game)
 	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/key32.png");
 	game->maps_textures[EXIT] = mlx_load_png("images/chest1.png");
 	game->maps_textures[EXIT_OPEN] = mlx_load_png("images/chest2.png");
-	// game->characteres[ENEMIE] = mlx_load_png("images/18.png");
 }
 
 void	ft_draw_base_map(t_main *game)
@@ -43,10 +42,10 @@ void	ft_draw_base_map(t_main *game)
 				width * game->width_tile, height * game->height_tile);
 			if (game->map[height][width] == '1')
 				mlx_image_to_window(game->mlx, game->images[IMG_WALL],
-				width * game->width_tile, height * game->height_tile);
+					width * game->width_tile, height * game->height_tile);
 			if (game->map[height][width] == 'E')
 				mlx_image_to_window(game->mlx, game->images[IMG_EXIT],
-				width * game->width_tile, height * game->height_tile);
+					width * game->width_tile, height * game->height_tile);
 			width++;
 		}
 		height++;
@@ -67,10 +66,10 @@ void	ft_draw_elements(t_main *game)
 		{
 			if (game->map[height][width] == 'C')
 				mlx_image_to_window(game->mlx, game->images[IMG_COLLECTIBLE],
-				width * game->width_tile, height * game->height_tile);
+					width * game->width_tile, height * game->height_tile);
 			else if (game->map[height][width] == 'P')
 				mlx_image_to_window(game->mlx, game->images[IMG_INICIAL],
-				width * game->width_tile, height * game->height_tile);
+					width * game->width_tile, height * game->height_tile);
 			width++;
 		}
 		height++;

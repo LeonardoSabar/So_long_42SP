@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 13:42:53 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:06:41 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	ft_chest_position(t_main *game)
 		idx++;
 	}
 }
-int	ft_count_exit(t_main *game)
+
+int	ft_count_exit(char **game)
 {
 	int	idx;
 	int	odx;
@@ -44,28 +45,25 @@ int	ft_count_exit(t_main *game)
 
 	exit = 0;
 	idx = 0;
-	while (game->map[idx])
+	while (game[idx])
 	{
 		odx = 0;
-		while (game->map[idx][odx])
+		while (game[idx][odx])
 		{
-			if (game->map[idx][odx] == 'E')
+			if (game[idx][odx] == 'E')
 				exit++;
-			if (exit > 1)
-			{
-				ft_printf(NUMBER_EXIT_MSG);
-				return (FALSE);
-			}
 			odx++;
 		}
 		idx++;
 	}
+	if (exit > 1)
+		return (FALSE);
 	return (TRUE);
 }
 
 void	ft_exit_game(t_main *game)
 {
-	if ((game->collectable <= 0) &&
-			(game->map[game->y / 64][game->x / 64] ==  'E'))
+	if ((game->collectable <= 0)
+		&& (game->map[game->y / 64][game->x / 64] == 'E'))
 		mlx_close_window(game->mlx);
 }
