@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 15:22:17 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 18:29:51 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define MOVE 64
 # define BUFFER_SIZE 50
 # define NUM_CHARACTERE 6
-# define NUM_TEXTURE 6
+# define NUM_TEXTURE 5
 # define NUM_IMAGES 12
 
 # define EMPTY_MSG "Error\nEmpty map\n"

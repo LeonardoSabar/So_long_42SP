@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 15:03:36 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:12:49 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,15 @@ int	main(int argc, char **argv)
 		return (1);
 	mlx_key_hook(main.mlx, ft_movement, &main);
 	mlx_loop(main.mlx);
+
+
+	for (int i = 0; i < NUM_CHARACTERE; i++)
+		mlx_delete_texture(main.characteres[i]);
+
+	for (int i = 0; i < NUM_TEXTURE; i++)
+		mlx_delete_texture(main.maps_textures[i]);
+
+
 	mlx_terminate(main.mlx);
 	ft_free_map(main.map);
 	return (EXIT_SUCCESS);

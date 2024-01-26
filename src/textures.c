@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:10:13 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 16:15:22 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ void	ft_get_textures(t_main *game)
 	game->characteres[WALK_RIGHT] = mlx_load_png("images/right.png");
 	game->characteres[WALK_UP] = mlx_load_png("images/up.png");
 	game->characteres[WALK_DOWN] = mlx_load_png("images/down.png");
-	game->maps_textures[FLOOR] = mlx_load_png("images/grass2.png");
 	game->maps_textures[WALL] = mlx_load_png("images/wall64.png");
-	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/key32.png");
+	game->maps_textures[FLOOR] = mlx_load_png("images/grass2.png");
 	game->maps_textures[EXIT] = mlx_load_png("images/chest1.png");
 	game->maps_textures[EXIT_OPEN] = mlx_load_png("images/chest2.png");
+	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/key32.png");
 }
 
 void	ft_draw_base_map(t_main *game)

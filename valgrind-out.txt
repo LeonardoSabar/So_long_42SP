@@ -1,0 +1,707 @@
+==150683== Memcheck, a memory error detector
+==150683== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==150683== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==150683== Command: ./Game maps/42.ber
+==150683== Parent PID: 148904
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x4041F8: mlx_image_to_window (src/mlx_images.c:127)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c18 is 24 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x4041FC: mlx_grow_instances (src/mlx_images.c:89)
+==150683==    by 0x4041FC: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c28 is 40 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 8
+==150683==    at 0x404204: mlx_image_to_window (src/mlx_images.c:127)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c18 is 24 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x404208: mlx_grow_instances (src/mlx_images.c:90)
+==150683==    by 0x404208: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c78 is 8 bytes inside a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404370: mlx_new_image (src/mlx_images.c:170)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 8
+==150683==    at 0x404222: mlx_grow_instances (src/mlx_images.c:0)
+==150683==    by 0x404222: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c78 is 8 bytes inside a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404370: mlx_new_image (src/mlx_images.c:170)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x404226: mlx_grow_instances (src/mlx_images.c:97)
+==150683==    by 0x404226: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid free() / delete / delete[] / realloc()
+==150683==    at 0x483DFAF: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404232: mlx_grow_instances (src/mlx_images.c:97)
+==150683==    by 0x404232: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109e60 is 0 bytes inside a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483B723: malloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x483E017: realloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404232: mlx_grow_instances (src/mlx_images.c:97)
+==150683==    by 0x404232: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x404211: mlx_grow_instances (src/mlx_images.c:100)
+==150683==    by 0x404211: mlx_image_to_window (src/mlx_images.c:129)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x404256: mlx_image_to_window (src/mlx_images.c:140)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c18 is 24 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 8
+==150683==    at 0x404262: mlx_image_to_window (src/mlx_images.c:141)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 4
+==150683==    at 0x404270: mlx_image_to_window (src/mlx_images.c:142)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea0 is 16 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 4
+==150683==    at 0x404278: mlx_image_to_window (src/mlx_images.c:143)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea4 is 12 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 4
+==150683==    at 0x404291: mlx_image_to_window (src/mlx_images.c:147)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea8 is 8 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid write of size 1
+==150683==    at 0x404296: mlx_image_to_window (src/mlx_images.c:148)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x4033FE: ft_pick_collectibles (collectibles.c:29)
+==150683==    by 0x403882: ft_movement (movement.c:79)
+==150683==    by 0x4881C1B: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109eac is 4 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x40563D: mlx_getzdata (src/utils/mlx_list.c:122)
+==150683==    by 0x40563D: mlx_insertsort (src/utils/mlx_list.c:132)
+==150683==    by 0x40563D: mlx_sort_renderqueue (src/utils/mlx_list.c:172)
+==150683==    by 0x40515E: mlx_render_images (src/mlx_loop.c:38)
+==150683==    by 0x40515E: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x405649: mlx_getzdata (src/utils/mlx_list.c:122)
+==150683==    by 0x405649: mlx_insertsort (src/utils/mlx_list.c:132)
+==150683==    by 0x405649: mlx_sort_renderqueue (src/utils/mlx_list.c:172)
+==150683==    by 0x40515E: mlx_render_images (src/mlx_loop.c:38)
+==150683==    by 0x40515E: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea8 is 8 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x40562B: mlx_getzdata (src/utils/mlx_list.c:122)
+==150683==    by 0x40562B: mlx_insertsort (src/utils/mlx_list.c:132)
+==150683==    by 0x40562B: mlx_sort_renderqueue (src/utils/mlx_list.c:172)
+==150683==    by 0x40515E: mlx_render_images (src/mlx_loop.c:38)
+==150683==    by 0x40515E: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x40564D: mlx_insertsort (src/utils/mlx_list.c:132)
+==150683==    by 0x40564D: mlx_sort_renderqueue (src/utils/mlx_list.c:172)
+==150683==    by 0x40515E: mlx_render_images (src/mlx_loop.c:38)
+==150683==    by 0x40515E: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea8 is 8 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 1
+==150683==    at 0x4051D4: mlx_render_images (src/mlx_loop.c:62)
+==150683==    by 0x4051D4: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c20 is 32 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x4051DA: mlx_render_images (src/mlx_loop.c:0)
+==150683==    by 0x4051DA: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c10 is 16 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 1
+==150683==    at 0x4051E6: mlx_render_images (src/mlx_loop.c:62)
+==150683==    by 0x4051E6: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109eac is 4 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A5A: mlx_draw_instance (src/mlx_images.c:65)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c00 is 0 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A61: mlx_draw_instance (src/mlx_images.c:66)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c04 is 4 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A69: mlx_draw_instance (src/mlx_images.c:67)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea0 is 16 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A70: mlx_draw_instance (src/mlx_images.c:68)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea4 is 12 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A75: mlx_draw_instance (src/mlx_images.c:69)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf109ea8 is 8 bytes before a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4044E1: mlx_delete_image (src/mlx_images.c:214)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404244: mlx_image_to_window (src/mlx_images.c:130)
+==150683==    by 0x402AC3: ft_draw_elements (textures.c:0)
+==150683==    by 0x402C25: ft_game_init (main.c:40)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 8
+==150683==    at 0x403A7A: mlx_bind_texture (src/mlx_images.c:32)
+==150683==    by 0x403A7A: mlx_draw_instance (src/mlx_images.c:70)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c28 is 40 bytes inside a block of size 48 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x40435E: mlx_new_image (src/mlx_images.c:169)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== Invalid read of size 4
+==150683==    at 0x403A7E: mlx_bind_texture (src/mlx_images.c:32)
+==150683==    by 0x403A7E: mlx_draw_instance (src/mlx_images.c:70)
+==150683==    by 0x4051F8: mlx_render_images (src/mlx_loop.c:63)
+==150683==    by 0x4051F8: mlx_loop (src/mlx_loop.c:112)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Address 0xf0d2c70 is 0 bytes inside a block of size 16 free'd
+==150683==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x405939: mlx_freen (src/utils/mlx_utils.c:95)
+==150683==    by 0x4032B3: ft_action_key (movement2.c:18)
+==150683==    by 0x4038A8: ft_movement (movement.c:81)
+==150683==    by 0x4881459: ??? (in /usr/lib/x86_64-linux-gnu/libglfw.so.3.3)
+==150683==    by 0x40507F: mlx_loop (src/mlx_loop.c:116)
+==150683==    by 0x402D03: main (main.c:64)
+==150683==  Block was alloc'd at
+==150683==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==150683==    by 0x404370: mlx_new_image (src/mlx_images.c:170)
+==150683==    by 0x405AA0: mlx_texture_to_image (src/textures/mlx_texture.c:22)
+==150683==    by 0x402EB3: ft_images_character (images.c:17)
+==150683==    by 0x402EB3: ft_get_images (images.c:47)
+==150683==    by 0x402C1D: ft_game_init (main.c:39)
+==150683==    by 0x402CE7: main (main.c:61)
+==150683== 
+==150683== 
+==150683== FILE DESCRIPTORS: 8 open at exit.
+==150683== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 38: /usr/share/code/resources/app/node_modules.asar
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open AF_UNIX socket 37: <unknown>
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 36: /nfs/homes/leobarbo/.config/Code/logs/20240126T183447/ptyhost.log
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 3: /nfs/homes/leobarbo/so_long/valgrind-out.txt
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 2: /dev/pts/0
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 1: /dev/pts/0
+==150683==    <inherited from parent>
+==150683== 
+==150683== Open file descriptor 0: /dev/pts/0
+==150683==    <inherited from parent>
+==150683== 
+==150683== 
+==150683== HEAP SUMMARY:
+==150683==     in use at exit: 288,426 bytes in 2,773 blocks
+==150683==   total heap usage: 146,261 allocs, 143,488 frees, 35,387,965 bytes allocated
+==150683== 
+==150683== LEAK SUMMARY:
+==150683==    definitely lost: 0 bytes in 0 blocks
+==150683==    indirectly lost: 0 bytes in 0 blocks
+==150683==      possibly lost: 0 bytes in 0 blocks
+==150683==    still reachable: 0 bytes in 0 blocks
+==150683==         suppressed: 288,426 bytes in 2,773 blocks
+==150683== 
+==150683== For lists of detected and suppressed errors, rerun with: -s
+==150683== ERROR SUMMARY: 11126 errors from 28 contexts (suppressed: 2 from 2)
