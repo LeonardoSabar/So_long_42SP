@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:41:21 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:03:36 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	ft_game_init(t_main *game)
 {
 	ft_screen_resize(game);
 	ft_count_collectible(game);
-	ft_start_pos(game);
 	ft_get_textures(game);
 	ft_get_images(game);
 	ft_draw_elements(game);
@@ -50,18 +49,20 @@ int	main(int argc, char **argv)
 		return (ft_putstr_fd(PARAMETERS_MSG, 2), EXIT_FAILURE);
 	if (ft_check_extension(argv[1]) == FALSE)
 		return (ft_putstr_fd(EXTENSION_MSG, 2), EXIT_FAILURE);
+	ft_struct_inicialize(&main);
 	main.map = ft_read_map(argv[1]);
 	if (!main.map)
 		return (EXIT_FAILURE);
 	if (ft_validation_map(main.map) == FALSE)
-	{
-		free (main.map);
-		return (EXIT_FAILURE);
-	}
+		return (ft_free_map(main.map), EXIT_FAILURE);
+	ft_start_pos(&main);
+	if (ft_valid_path(&main, argv[1]) == FALSE)
+		return (ft_free_map(main.map), EXIT_FAILURE);
 	if (ft_game_init(&main) == FALSE)
 		return (1);
 	mlx_key_hook(main.mlx, ft_movement, &main);
 	mlx_loop(main.mlx);
 	mlx_terminate(main.mlx);
+	ft_free_map(main.map);
 	return (EXIT_SUCCESS);
 }

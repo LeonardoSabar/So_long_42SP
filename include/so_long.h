@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 18:36:46 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 15:22:17 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 # define NUMBER_PLAYER_MSG "Error\nMap has more or less than one player\n"
 # define NUMBER_EXIT_MSG "Error\nMap has more or less than one exit\n"
 # define NO_COLLECTUBLE_MSG "Error\nMap has no collectibles\n"
+# define NO_PATH_MSG "Error\nMap has no valid path\n"
 
 enum e_characteres
 {
@@ -81,19 +82,21 @@ enum e_images
 typedef struct s_main
 {
 	char			**map;
+	char			**map_copy;
 	mlx_t			*mlx;
 	mlx_image_t		*img;
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
 	mlx_texture_t	*maps_textures[NUM_TEXTURE];
-	int				collectable;
+	int				collectible;
 	int				width_tile;
 	int				height_tile;
-	int				chest_position_x;
-	int				chest_position_y;
-	int				x;
-	int				y;
+	int				chest_pos_x;
+	int				chest_pos_y;
+	int				char_pos_x;
+	int				char_pos_y;
 	int				last_state;
+	int				moves;
 }	t_main;
 
 //main.c
@@ -135,17 +138,25 @@ int		ft_count_exit(char **game);
 void	ft_exit_game(t_main *game);
 
 //utils.c
+void	ft_free_map(char **map);
+int		*ft_size_map(char **map);
+void	ft_struct_inicialize(t_main *game);
 void	ft_start_pos(t_main *game);
 int		ft_count_player(char **game);
 
 //map.c
 char	**ft_read_map(char *map_content);
 int		ft_check_extension(char *file);
-// static char	*ft_read_all(int fd);
 
 //collectibles.c
 void	ft_count_collectible(t_main *game);
 void	ft_pick_collectibles(t_main *game);
 int		ft_zero_collectible(char **game);
+
+//flood.c
+void	ft_flood_fill(t_main *game, int x, int y);
+int		ft_check_flood_fill(char **map);
+int		ft_valid_path(t_main *game, char *fd);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:06:41 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/26 11:49:10 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_chest_position(t_main *game)
 	int	idx;
 	int	odx;
 
-	game->chest_position_x = -1;
-	game->chest_position_y = -1;
+	game->chest_pos_x = -1;
+	game->chest_pos_y = -1;
 	idx = 0;
 	while (game->map[idx])
 	{
@@ -27,8 +27,8 @@ void	ft_chest_position(t_main *game)
 		{
 			if (game->map[idx][odx] == 'E')
 			{
-				game->chest_position_x = odx * 64;
-				game->chest_position_y = idx * 64;
+				game->chest_pos_x = odx * 64;
+				game->chest_pos_y = idx * 64;
 				return ;
 			}
 			odx++;
@@ -63,7 +63,8 @@ int	ft_count_exit(char **game)
 
 void	ft_exit_game(t_main *game)
 {
-	if ((game->collectable <= 0)
-		&& (game->map[game->y / 64][game->x / 64] == 'E'))
+	if ((game->collectible <= 0)
+		&& (game->map[game->char_pos_y / 64][game
+			->char_pos_x / 64] == 'E'))
 		mlx_close_window(game->mlx);
 }
