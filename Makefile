@@ -6,8 +6,8 @@ PRINTF	:= ./lib/printf
 
 HEADERS	:= -I ./include -I $(LIBMLX)/include -I $(LIBFT) -I $(PRINTF)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a ${LIBFT}/libft.a $(PRINTF)/libftprintf.a -ldl -lglfw -pthread -lm
-SRCS	:= $(shell find ./src -iname "*.c")
-OBJS	:= ${SRCS:.c=.o}
+SRCS	:= $(shell find src -iname "*.c")		# Mudar isso depois
+OBJS	:= ${SRCS:src/%.c=obj/%.o}
 
 all: libmlx libft $(NAME)
 
@@ -20,7 +20,8 @@ libft:
 printf:
 	@make -C ${PRINTF} all
 
-%.o: %.c
+obj/%.o: src/%.c
+	@mkdir -p obj
 	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS) && printf "Compiling: $(notdir $<)\n"
 
 $(NAME): $(OBJS)
