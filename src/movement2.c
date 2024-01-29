@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:24:37 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 12:57:01 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 09:56:46 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ void	ft_action_key(mlx_key_data_t keydata, t_main *game)
 		ft_move_left(game);
 	else if (keydata.key == MLX_KEY_D || keydata.key == MLX_KEY_RIGHT)
 		ft_move_right(game);
-	mlx_image_to_window(game->mlx, game->img, game->char_pos_x, game->char_pos_y);
+	mlx_image_to_window(game->mlx, game->img,
+		game->char_pos_x, game->char_pos_y);
 }
 
 void	ft_release_key(t_main *game)
@@ -38,5 +39,6 @@ void	ft_release_key(t_main *game)
 	else
 		game->img = mlx_texture_to_image
 			(game->mlx, game->characteres[INICIAL]);
-	mlx_image_to_window(game->mlx, game->img, game->char_pos_x, game->char_pos_y);
+	mlx_image_to_window(game->mlx, game->img,
+		game->char_pos_x, game->char_pos_y);
 }

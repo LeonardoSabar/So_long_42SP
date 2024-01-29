@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/25 17:58:39 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:08:43 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ int	ft_validation_map(char **map)
 	if (ft_count_player(map) == FALSE)
 		return (ft_putstr_fd(NUMBER_PLAYER_MSG, 2), FALSE);
 	if (ft_zero_collectible(map) == FALSE)
-		return (ft_putstr_fd(NO_COLLECTUBLE_MSG, 2), FALSE);
+		return (ft_putstr_fd(NO_COLLECTIBLE_MSG, 2), FALSE);
 	return (TRUE);
 }

@@ -6,11 +6,27 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 16:12:49 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:45:19 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_free_texture(t_main *main)
+{
+	int i = 0;
+	while (i <= NUM_CHARACTERE)
+	{
+		mlx_delete_texture(main->characteres[i]);
+		i++;
+	}
+	int p = 0;
+	while (i <= NUM_TEXTURE)
+	{
+		mlx_delete_texture(main->maps_textures[p]);
+		p++;
+	}
+}
 
 void	ft_screen_resize(t_main *game)
 {
@@ -62,16 +78,8 @@ int	main(int argc, char **argv)
 		return (1);
 	mlx_key_hook(main.mlx, ft_movement, &main);
 	mlx_loop(main.mlx);
-
-
-	for (int i = 0; i < NUM_CHARACTERE; i++)
-		mlx_delete_texture(main.characteres[i]);
-
-	for (int i = 0; i < NUM_TEXTURE; i++)
-		mlx_delete_texture(main.maps_textures[i]);
-
-
-	mlx_terminate(main.mlx);
 	ft_free_map(main.map);
+	ft_free_texture(&main);
+	mlx_terminate(main.mlx);
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 11:49:10 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:44:38 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,9 @@ void	ft_exit_game(t_main *game)
 	if ((game->collectible <= 0)
 		&& (game->map[game->char_pos_y / 64][game
 			->char_pos_x / 64] == 'E'))
+	{
+		ft_free_map(game->map);
+		ft_free_texture(game);
 		mlx_close_window(game->mlx);
+	}
 }

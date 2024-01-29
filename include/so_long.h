@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 18:29:51 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 11:40:08 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@
 # define EXTENSION_MSG "Error\nFile extension is not .ber\n"
 # define NUMBER_PLAYER_MSG "Error\nMap has more or less than one player\n"
 # define NUMBER_EXIT_MSG "Error\nMap has more or less than one exit\n"
-# define NO_COLLECTUBLE_MSG "Error\nMap has no collectibles\n"
+# define NO_COLLECTIBLE_MSG "Error\nMap has no collectibles\n"
 # define NO_PATH_MSG "Error\nMap has no valid path\n"
 
 enum e_characteres
@@ -103,6 +103,7 @@ typedef struct s_main
 int		main(int argc, char **argv);
 int		ft_game_init(t_main *game);
 void	ft_screen_resize(t_main *game);
+void	ft_free_texture(t_main *main);
 
 //validation.c
 int		ft_validation_map(char **map);
