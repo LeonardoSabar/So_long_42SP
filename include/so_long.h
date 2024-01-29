@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 15:06:07 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:12:32 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ typedef struct s_main
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
 	mlx_texture_t	*maps_textures[NUM_TEXTURE];
+	mlx_texture_t	*icon;
 	int				collectible;
 	int				width_tile;
 	int				height_tile;

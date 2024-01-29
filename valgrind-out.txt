@@ -1,46 +1,46 @@
-==72431== Memcheck, a memory error detector
-==72431== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==72431== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==72431== Command: ./Game maps/small_map.ber
-==72431== Parent PID: 72149
-==72431== 
-==72431== 
-==72431== FILE DESCRIPTORS: 8 open at exit.
-==72431== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 38: /usr/share/code/resources/app/node_modules.asar
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open AF_UNIX socket 37: <unknown>
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 36: /nfs/homes/leobarbo/.config/Code/logs/20240129T154128/ptyhost.log
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 3: /nfs/homes/leobarbo/so_long/valgrind-out.txt
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 2: /dev/pts/1
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 1: /dev/pts/1
-==72431==    <inherited from parent>
-==72431== 
-==72431== Open file descriptor 0: /dev/pts/1
-==72431==    <inherited from parent>
-==72431== 
-==72431== 
-==72431== HEAP SUMMARY:
-==72431==     in use at exit: 288,426 bytes in 2,773 blocks
-==72431==   total heap usage: 69,144 allocs, 66,371 frees, 19,467,317 bytes allocated
-==72431== 
-==72431== LEAK SUMMARY:
-==72431==    definitely lost: 0 bytes in 0 blocks
-==72431==    indirectly lost: 0 bytes in 0 blocks
-==72431==      possibly lost: 0 bytes in 0 blocks
-==72431==    still reachable: 0 bytes in 0 blocks
-==72431==         suppressed: 288,426 bytes in 2,773 blocks
-==72431== 
-==72431== For lists of detected and suppressed errors, rerun with: -s
-==72431== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+==104349== Memcheck, a memory error detector
+==104349== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==104349== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==104349== Command: ./so_long maps/42.ber
+==104349== Parent PID: 102863
+==104349== 
+==104349== 
+==104349== FILE DESCRIPTORS: 8 open at exit.
+==104349== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 38: /usr/share/code/resources/app/node_modules.asar
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open AF_UNIX socket 37: <unknown>
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 36: /nfs/homes/leobarbo/.config/Code/logs/20240129T164145/ptyhost.log
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 3: /nfs/homes/leobarbo/so_long/valgrind-out.txt
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 2: /dev/pts/0
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 1: /dev/pts/0
+==104349==    <inherited from parent>
+==104349== 
+==104349== Open file descriptor 0: /dev/pts/0
+==104349==    <inherited from parent>
+==104349== 
+==104349== 
+==104349== HEAP SUMMARY:
+==104349==     in use at exit: 288,426 bytes in 2,773 blocks
+==104349==   total heap usage: 100,640 allocs, 97,867 frees, 26,567,047 bytes allocated
+==104349== 
+==104349== LEAK SUMMARY:
+==104349==    definitely lost: 0 bytes in 0 blocks
+==104349==    indirectly lost: 0 bytes in 0 blocks
+==104349==      possibly lost: 0 bytes in 0 blocks
+==104349==    still reachable: 0 bytes in 0 blocks
+==104349==         suppressed: 288,426 bytes in 2,773 blocks
+==104349== 
+==104349== For lists of detected and suppressed errors, rerun with: -s
+==104349== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)

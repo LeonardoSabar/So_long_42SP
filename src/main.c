@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 16:16:01 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:18:19 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ int	ft_game_init(t_main *game)
 	ft_screen_resize(game);
 	ft_count_collectible(game);
 	ft_get_textures(game);
+	mlx_set_icon(game->mlx, game->icon);
+	mlx_delete_texture(game->icon);
 	ft_get_images(game);
 	ft_draw_elements(game);
 	return (TRUE);
@@ -67,7 +69,7 @@ int	main(int argc, char **argv)
 		return (ft_putstr_fd(PARAMETERS_MSG, 2), EXIT_FAILURE);
 	if (ft_check_extension(argv[1]) == FALSE)
 		return (ft_putstr_fd(EXTENSION_MSG, 2), EXIT_FAILURE);
-	ft_struct_inicialize(&main);
+	ft_bzero(&main, sizeof(t_main));
 	main.map = ft_read_map(argv[1]);
 	if (!main.map)
 		return (EXIT_FAILURE);
