@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 10:06:47 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:06:56 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ void	ft_draw_base_map(t_main *game)
 			if (game->map[height][width] == 'E')
 				mlx_image_to_window(game->mlx, game->images[IMG_EXIT],
 					width * game->width_tile, height * game->height_tile);
+			if (game->map[height][width] == 'C')
+				mlx_image_to_window(game->mlx, game->images[IMG_COLLECTIBLE],
+					width * game->width_tile, height * game->height_tile);
+
 			width++;
 		}
 		height++;

@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 11:45:19 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:11:06 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 void	ft_free_texture(t_main *main)
 {
-	int i = 0;
-	while (i <= NUM_CHARACTERE)
+	int	i;
+
+	i = 0;
+	while (i < NUM_CHARACTERE)
 	{
 		mlx_delete_texture(main->characteres[i]);
 		i++;
 	}
-	int p = 0;
-	while (i <= NUM_TEXTURE)
+	i = 0;
+	while (p < NUM_TEXTURE)
 	{
 		mlx_delete_texture(main->maps_textures[p]);
 		p++;

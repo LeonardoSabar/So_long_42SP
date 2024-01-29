@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 15:23:26 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 11:25:56 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:05:27 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_pick_collectibles(t_main *game)
 			if (game->map[game->char_pos_y / 64][game->char_pos_x / 64] == 'C')
 			{
 				(game->map[game->char_pos_y / 64][game->char_pos_x / 64] = '0');
-				ft_draw_elements(game);
+				ft_draw_base_map(game);
 				game->collectible--;
 				return ;
 			}

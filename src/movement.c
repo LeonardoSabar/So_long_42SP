@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 11:23:27 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:02:07 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ void	ft_movement(mlx_key_data_t keydata, void *param)
 	// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	ft_exit_game(game);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+	{
 		mlx_close_window(game->mlx);
+		return ;
+	}
 	ft_pick_collectibles(game);
 	if (keydata.action == MLX_PRESS)
 		ft_action_key(keydata, game);

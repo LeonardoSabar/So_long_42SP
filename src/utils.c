@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:30:48 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 08:57:15 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:30:13 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,9 @@ int	*ft_size_map(char **map)
 
 void	ft_struct_inicialize(t_main *game)
 {
+	// game = malloc(sizeof(t_main));
+	// if (!game)
+	// 	return ;
 	game->mlx = NULL;
 	game->map = NULL;
 	game->img = NULL;
