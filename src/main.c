@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 16:11:06 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/29 16:16:01 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	ft_free_texture(t_main *main)
 		i++;
 	}
 	i = 0;
-	while (p < NUM_TEXTURE)
+	while (i < NUM_TEXTURE)
 	{
-		mlx_delete_texture(main->maps_textures[p]);
-		p++;
+		mlx_delete_texture(main->maps_textures[i]);
+		i++;
 	}
 }
 
