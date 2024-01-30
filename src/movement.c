@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 15:13:49 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:28:56 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_move_up(t_main *game)
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_UP]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
+		ft_print_moves(game);
 	}
 }
 
@@ -34,6 +35,7 @@ void	ft_move_down(t_main *game)
 			(game->mlx, game->characteres[WALK_DOWN]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
+		ft_print_moves(game);
 	}
 }
 
@@ -48,6 +50,7 @@ void	ft_move_left(t_main *game)
 			(game->mlx, game->characteres[WALK_LEFT]);
 		game->last_state = WALK_LEFT;
 		game->moves++;
+		ft_print_moves(game);
 	}
 }
 
@@ -62,6 +65,7 @@ void	ft_move_right(t_main *game)
 			(game->mlx, game->characteres[WALK_RIGHT]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
+		ft_print_moves(game);
 	}
 }
 

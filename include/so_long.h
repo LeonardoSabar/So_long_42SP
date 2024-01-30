@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 16:44:46 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 17:27:12 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ void	ft_move_right(t_main *game);
 //movement2.c
 void	ft_action_key(mlx_key_data_t keydata, t_main *game);
 void	ft_release_key(t_main *game);
+void	ft_print_moves(t_main *game);
 void	ft_put_moves(t_main *game);
 
 //exit.c
