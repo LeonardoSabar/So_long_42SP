@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 18:12:32 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 16:44:46 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ typedef struct s_main
 	int				char_pos_y;
 	int				last_state;
 	int				moves;
+	mlx_image_t		*strimage;
 }	t_main;
 
 //main.c
@@ -133,6 +134,7 @@ void	ft_move_right(t_main *game);
 //movement2.c
 void	ft_action_key(mlx_key_data_t keydata, t_main *game);
 void	ft_release_key(t_main *game);
+void	ft_put_moves(t_main *game);
 
 //exit.c
 void	ft_chest_position(t_main *game);
@@ -142,7 +144,6 @@ void	ft_exit_game(t_main *game);
 //utils.c
 void	ft_free_map(char **map);
 int		*ft_size_map(char **map);
-void	ft_struct_inicialize(t_main *game);
 void	ft_start_pos(t_main *game);
 int		ft_count_player(char **game);
 

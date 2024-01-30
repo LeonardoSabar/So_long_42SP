@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 16:02:07 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 15:13:49 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	ft_move_up(t_main *game)
 		game->img = mlx_texture_to_image(game->mlx, game->characteres[WALK_UP]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
-		// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	}
 }
 
@@ -35,7 +34,6 @@ void	ft_move_down(t_main *game)
 			(game->mlx, game->characteres[WALK_DOWN]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
-		// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	}
 }
 
@@ -43,18 +41,19 @@ void	ft_move_left(t_main *game)
 {
 	if (game->map[game->char_pos_y / 64][game->char_pos_x / 64 - 1] != '1')
 	{
+
 		game->char_pos_x -= MOVE;
 		mlx_delete_image(game->mlx, game->img);
 		game->img = mlx_texture_to_image
 			(game->mlx, game->characteres[WALK_LEFT]);
 		game->last_state = WALK_LEFT;
 		game->moves++;
-		// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	}
 }
 
 void	ft_move_right(t_main *game)
 {
+
 	if (game->map[game->char_pos_y / 64][(game->char_pos_x / 64) + 1] != '1')
 	{
 		game->char_pos_x += MOVE;
@@ -63,7 +62,6 @@ void	ft_move_right(t_main *game)
 			(game->mlx, game->characteres[WALK_RIGHT]);
 		game->last_state = WALK_RIGHT;
 		game->moves++;
-		// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	}
 }
 
@@ -72,7 +70,6 @@ void	ft_movement(mlx_key_data_t keydata, void *param)
 	t_main	*game;
 
 	game = (t_main *)param;
-	// mlx_put_string(game->mlx, "MOVES: ", 0, 0);
 	ft_exit_game(game);
 	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 	{

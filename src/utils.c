@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 14:30:48 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 18:17:49 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 14:16:24 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,21 +46,6 @@ int	*ft_size_map(char **map)
 	size[0] = width;
 	size[1] = height;
 	return (size);
-}
-
-
-void	ft_struct_inicialize(t_main *game)
-{
-	ft_bzero(game, sizeof(t_main));
-	// game->mlx = NULL;
-	// game->map = NULL;
-	// game->img = NULL;
-	// game->width_tile = 0;
-	// game->height_tile = 0;
-	// game->char_pos_x = 0;
-	// game->char_pos_y = 0;
-	// game->moves = 0;
-	// game->collectible = 0;
 }
 
 
