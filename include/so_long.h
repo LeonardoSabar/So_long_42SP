@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:10:16 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:28:40 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,6 +163,4 @@ int		ft_zero_collectible(char **game);
 void	ft_flood_fill(t_main *game, int x, int y);
 int		ft_check_flood_fill(char **map);
 int		ft_valid_path(t_main *game, char *fd);
-
-
 #endif
