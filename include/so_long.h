@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 17:27:12 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:10:16 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,12 @@ typedef struct s_main
 	char			**map_copy;
 	mlx_t			*mlx;
 	mlx_image_t		*img;
+	mlx_image_t		*scroll_image;
 	mlx_image_t		*images[NUM_IMAGES];
 	mlx_texture_t	*characteres[NUM_CHARACTERE];
 	mlx_texture_t	*maps_textures[NUM_TEXTURE];
 	mlx_texture_t	*icon;
+	mlx_texture_t	*scroll_texture;
 	int				collectible;
 	int				width_tile;
 	int				height_tile;
@@ -105,19 +107,19 @@ typedef struct s_main
 int		main(int argc, char **argv);
 int		ft_game_init(t_main *game);
 void	ft_screen_resize(t_main *game);
-void	ft_free_texture(t_main *main);
 
 //validation.c
 int		ft_validation_map(char **map);
-int		ft_check_elements(char **map);
 int		ft_wall_check(char **map);
-int		ft_empty_map(char **map);
+int		ft_check_elements(char **map);
 int		ft_rectangle_map(char **map);
+int		ft_empty_map(char **map);
 
 //textures.c
-void	ft_get_textures(t_main *game);
-void	ft_draw_base_map(t_main *game);
+void	ft_free_texture(t_main *main);
 void	ft_draw_elements(t_main *game);
+void	ft_draw_base_map(t_main *game);
+void	ft_get_textures(t_main *game);
 
 //images.c
 void	ft_get_images(t_main *game);

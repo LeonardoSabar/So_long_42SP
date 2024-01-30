@@ -6,29 +6,11 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 15:11:14 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:02:44 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	ft_free_texture(t_main *main)
-{
-	int	i;
-
-	i = 0;
-	while (i < NUM_CHARACTERE)
-	{
-		mlx_delete_texture(main->characteres[i]);
-		i++;
-	}
-	i = 0;
-	while (i < NUM_TEXTURE)
-	{
-		mlx_delete_texture(main->maps_textures[i]);
-		i++;
-	}
-}
 
 void	ft_screen_resize(t_main *game)
 {
@@ -58,6 +40,7 @@ int	ft_game_init(t_main *game)
 	mlx_delete_texture(game->icon);
 	ft_get_images(game);
 	ft_draw_elements(game);
+	ft_put_moves(game);
 	return (TRUE);
 }
 

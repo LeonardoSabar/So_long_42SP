@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 18:12:46 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:04:15 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	ft_get_textures(t_main *game)
 	game->maps_textures[EXIT_OPEN] = mlx_load_png("images/chest_open.png");
 	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/key.png");
 	game->icon = mlx_load_png("images/icon.png");
+	game->scroll_texture = mlx_load_png("images/scroll.png");
 }
-
 
 void	ft_draw_base_map(t_main *game)
 {
@@ -51,13 +51,11 @@ void	ft_draw_base_map(t_main *game)
 			if (game->map[height][width] == 'C')
 				mlx_image_to_window(game->mlx, game->images[IMG_COLLECTIBLE],
 					width * game->width_tile, height * game->height_tile);
-
 			width++;
 		}
 		height++;
 	}
 }
-
 
 void	ft_draw_elements(t_main *game)
 {
@@ -81,4 +79,23 @@ void	ft_draw_elements(t_main *game)
 		}
 		height++;
 	}
+}
+
+void	ft_free_texture(t_main *main)
+{
+	int	i;
+
+	i = 0;
+	while (i < NUM_CHARACTERE)
+	{
+		mlx_delete_texture(main->characteres[i]);
+		i++;
+	}
+	i = 0;
+	while (i < NUM_TEXTURE)
+	{
+		mlx_delete_texture(main->maps_textures[i]);
+		i++;
+	}
+	mlx_delete_texture(main->scroll_texture);
 }

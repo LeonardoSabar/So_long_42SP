@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 08:46:45 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 10:59:58 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:04:37 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,6 @@ void	ft_get_images(t_main *game)
 {
 	ft_images_character(game);
 	ft_images_elements(game);
+	game->scroll_image = mlx_texture_to_image(game->mlx,
+			game->scroll_texture);
 }

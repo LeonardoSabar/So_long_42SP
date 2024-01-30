@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 09:07:23 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 17:28:56 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:05:21 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	ft_move_left(t_main *game)
 {
 	if (game->map[game->char_pos_y / 64][game->char_pos_x / 64 - 1] != '1')
 	{
-
 		game->char_pos_x -= MOVE;
 		mlx_delete_image(game->mlx, game->img);
 		game->img = mlx_texture_to_image
@@ -56,7 +55,6 @@ void	ft_move_left(t_main *game)
 
 void	ft_move_right(t_main *game)
 {
-
 	if (game->map[game->char_pos_y / 64][(game->char_pos_x / 64) + 1] != '1')
 	{
 		game->char_pos_x += MOVE;
