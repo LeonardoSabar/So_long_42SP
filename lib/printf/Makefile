@@ -6,7 +6,7 @@
 #    By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 12:42:42 by leobarbo          #+#    #+#              #
-#    Updated: 2023/12/07 15:08:20 by leobarbo         ###   ########.fr        #
+#    Updated: 2024/02/01 19:40:21 by leobarbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,13 +59,13 @@ all: $(NAME)
 
 %.o:$(PATH_SRC)%.c
 	@echo "Compilando $<"
-	@$(CC) $(CFLAGS) -I $(PATH_SRC) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(PATH_INCLUDE) -c $< -o $@
 
 %.o: $(PATH_UTILS)%.c
 	@echo "Compilando $<"
-	@$(CC) $(CFLAGS) -I $(PATH_SRC) -I $(PATH_UTILS) -c $< -o $@
+	@$(CC) $(CFLAGS) -I $(PATH_INCLUDE) -I $(PATH_UTILS) -c $< -o $@
 
-clean: 
+clean:
 	@$(RM) *.o
 
 fclean: clean
