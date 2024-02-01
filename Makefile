@@ -12,6 +12,12 @@ GREEN = \033[32m
 YELLOW = \033[33m
 RESET = \033[0m
 
+ifdef WITH_BONUS
+	NAME	:= $(NAME_BONUS)
+	SRCS	:= $(SRCS_BONUS)
+	OBJS	:= $(OBJS_BONUS)
+endif
+
 HEADERS	:= -I ./include -I $(LIBMLX)/include -I $(LIBFT)/include -I $(PRINTF)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a ${LIBFT}/libft.a $(PRINTF)/libftprintf.a -ldl -lglfw -pthread -lm
 SRCS	:= $(addprefix $(SRCS_PATH),\
