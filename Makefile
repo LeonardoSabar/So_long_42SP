@@ -50,7 +50,7 @@ OBJS	:= ${SRCS:%.c=%.o}
 
 OBJS_BONUS	:= ${SRCS_BONUS:%.c=%.o}
 
-all: libmlx libft $(NAME)
+all: libmlx libft printf $(NAME)
 
 libft:
 	$(MAKE) -C ${LIBFT} all
@@ -62,8 +62,7 @@ printf:
 	$(MAKE) -C ${PRINTF} all
 
 %.o: %.c
-	mkdir -p obj
-	$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
+	$(CC) $(HEADERS) $(CFLAGS) -o $@ -c $<
 
 $(NAME): $(OBJS)
 	printf "$(YELLOW)Compiling...$(RESET)\n"

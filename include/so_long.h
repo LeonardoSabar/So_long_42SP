@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/02/01 19:15:08 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:41:10 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../lib/MLX42/include/MLX42/MLX42.h"
 # include "../lib/libft/libft.h"
-# include "../lib/printf/include/ft_printf.h"
+# include "../lib/printf/includes/ft_printf.h"
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
