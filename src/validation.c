@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 12:36:02 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 11:08:43 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 12:48:10 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_check_elements(char **map)
 		{
 			if (!(map[idx][odx] == '1' || map[idx][odx] == '0'
 				|| map[idx][odx] == 'C' || map[idx][odx] == 'E'
-				|| map[idx][odx] == 'P'))
+				|| map[idx][odx] == 'P' || map[idx][odx] == 'V'))
 				return (FALSE);
 			else
 				odx++;

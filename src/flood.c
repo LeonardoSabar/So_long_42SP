@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 13:21:03 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/26 15:35:50 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:15:59 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ft_flood_fill(t_main *game, int y, int x)
 
 	size = ft_size_map(game->map_copy);
 	if ((x > 0 && y > 0 && x < size[0] && y < size[1]
-			&& game->map_copy[y][x] != '1' && game->map_copy[y][x] != 'X'))
+			&& game->map_copy[y][x] != '1' && game->map_copy[y][x] != 'V'
+			&& game->map_copy[y][x] != 'X'))
 	{
 		game->map_copy[y][x] = 'X';
 		ft_flood_fill(game, y + 1, x);

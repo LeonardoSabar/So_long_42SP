@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 08:46:45 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:04:37 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 13:15:24 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	ft_images_character(t_main *game)
 			game->characteres[WALK_UP]);
 	game->images[IMG_WALK_DOWN] = mlx_texture_to_image(game->mlx,
 			game->characteres[WALK_DOWN]);
+	game->images[IMG_ENEMIE] = mlx_texture_to_image(game->mlx,
+			game->characteres[ENEMIE]);
 }
 
 void	ft_images_elements(t_main *game)

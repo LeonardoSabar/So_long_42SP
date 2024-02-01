@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/02/01 10:50:03 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:33:32 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ int	ft_count_exit(char **game)
 void	ft_exit_game(t_main *game)
 {
 	if ((game->collectible <= 0)
-		&& (game->map[game->char_pos_y / 64]
-			[game->char_pos_x / 64] == 'E'))
+		&& (game->map[game->char_pos_y / 64][game->char_pos_x / 64] == 'E'))
+		mlx_close_window(game->mlx);
+	else if (game->map[game->char_pos_y / 64][game->char_pos_x / 64] == 'V')
 		mlx_close_window(game->mlx);
 }

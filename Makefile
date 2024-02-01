@@ -6,7 +6,9 @@ PRINTF	:= ./lib/printf
 
 HEADERS	:= -I ./include -I $(LIBMLX)/include -I $(LIBFT) -I $(PRINTF)/include
 LIBS	:= $(LIBMLX)/build/libmlx42.a ${LIBFT}/libft.a $(PRINTF)/libftprintf.a -ldl -lglfw -pthread -lm
-SRCS	:= $(shell find src -iname "*.c")		# Mudar isso depois
+SRCS	:=	collectibles.c\
+			exit.c\
+
 OBJS	:= ${SRCS:src/%.c=obj/%.o}
 
 all: libmlx libft $(NAME)
@@ -29,9 +31,6 @@ $(NAME): $(OBJS)
 
 clean:
 	@rm -rf $(OBJS)
-#	@rm -rf $(LIBMLX)/build
-#	@make -C ${LIBFT} clean
-#	@make -C ${PRINTF} clean
 
 fclean: clean
 	@rm -rf $(NAME)

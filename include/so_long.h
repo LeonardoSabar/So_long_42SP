@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:28:40 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:13:45 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define TRUE 0
 # define MOVE 64
 # define BUFFER_SIZE 50
-# define NUM_CHARACTERE 6
+# define NUM_CHARACTERE 7
 # define NUM_TEXTURE 5
 # define NUM_IMAGES 12
 
