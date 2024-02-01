@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 18:41:41 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:57:17 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:09:12 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_get_textures(t_main *game)
 	game->maps_textures[EXIT_OPEN] = mlx_load_png("images/chest2.png");
 	game->maps_textures[COLLECTIBLE] = mlx_load_png("images/key.png");
 	game->icon = mlx_load_png("images/icon.png");
-	game->scroll_texture = mlx_load_png("images/scroll.png");
+	game->scroll_texture = mlx_load_png("images/scroll4.png");
 }
 
 void	ft_draw_base_map(t_main *game)

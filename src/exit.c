@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 09:18:05 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/29 18:10:50 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 10:50:03 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_count_exit(char **game)
 		}
 		idx++;
 	}
-	if (exit > 1)
+	if (exit != 1)
 		return (FALSE);
 	return (TRUE);
 }

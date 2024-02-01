@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/25 18:24:37 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/01/30 20:24:38 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 11:21:34 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,9 @@ void	ft_put_moves(t_main *game)
 
 	mlx_delete_image(game->mlx, game->strimage);
 	str = ft_itoa(game->moves);
-	mlx_image_to_window(game->mlx, game->scroll_image, 0, -8);
-	mlx_resize_image(game->scroll_image, 200, 75);
-	game->strimage = mlx_put_string(game->mlx, str, 140, 10);
-	mlx_resize_image(game->strimage, 25, 32);
+	mlx_image_to_window(game->mlx, game->scroll_image, 0, -5);
+	mlx_resize_image(game->scroll_image, 150, 58);
+	game->strimage = mlx_put_string(game->mlx, str, 85, 5);
+	mlx_resize_image(game->strimage, 25, 35);
 	free(str);
 }
