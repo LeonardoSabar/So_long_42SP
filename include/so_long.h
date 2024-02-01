@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 14:29:25 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/02/01 14:13:45 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:15:08 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@
 # define NUM_IMAGES 12
 
 # define EMPTY_MSG "Error\nEmpty map\n"
+# define NOT_EXIST_MSG "Error\nMap does not exist\n"
 # define RECTANGLE_MSG "Error\nMap is not a rectangle\n"
 # define ELEMENTS_MSG "Error\nMap has wrongs components\n"
 # define WALL_MSG "Error\nMap don't have close walls\n"

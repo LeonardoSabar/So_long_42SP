@@ -6,7 +6,7 @@
 /*   By: leobarbo <leobarbo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:14:16 by leobarbo          #+#    #+#             */
-/*   Updated: 2024/02/01 14:37:15 by leobarbo         ###   ########.fr       */
+/*   Updated: 2024/02/01 19:15:18 by leobarbo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 	ft_bzero(&main, sizeof(t_main));
 	main.map = ft_read_map(argv[1]);
 	if (!main.map)
-		return (EXIT_FAILURE);
+		return (ft_putstr_fd(NOT_EXIST_MSG, 2), EXIT_FAILURE);
 	if (ft_validation_map(main.map) == FALSE)
 		return (ft_free_map(main.map), EXIT_FAILURE);
 	ft_start_pos(&main);
