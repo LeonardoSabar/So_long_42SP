@@ -77,4 +77,4 @@ Gostaria de agradecer aos colegas abaixo pela ajuda durante o desenvolvimento de
 
 * [Chrystian](https://github.com/Chrystian-Natanael).
 
-*[Daniel Trigo](https://github.com/willtrigo).
+* [Daniel Trigo](https://github.com/willtrigo).
