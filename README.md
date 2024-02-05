@@ -83,4 +83,4 @@ I would like to thank the colleagues below for their assistance during the devel
 
 * [Chrystian](https://github.com/Chrystian-Natanael).
 
-*[Daniel Trigo](https://github.com/willtrigo).
+* [Daniel Trigo](https://github.com/willtrigo).
