@@ -34,17 +34,17 @@ Este projeto também utiliza a biblioteca externa [Libft](https://github.com/Leo
 git clone --recursive git@github.com:LeonardoSabar/so_long.git
 ```
 
-**<em> this command will clone the project and the Libft submodule </em>**
+**<em>  este comando irá clonar o projeto e o submódulo Libft  </em>**
 
 
 </br>
 
-To compile the **mandatory** part use:
+Para compilar a parte **mandatória** use
 ```sh
 make
 ```
 
-To compile the **bonus** part use:
+Para compilar a parte **bonus** use:
 
 ```sh
 make bonus
@@ -54,12 +54,12 @@ make bonus
 
 Após compilar o projeto, o arquivo executável com o nome so_long será criado. Para executar o jogo, chame o executável passando o mapa como argumento:
 
-Examplo:
+Exemplo:
 
 ```sh
 ./so_long map.ber
 ```
-**<em> some maps and the map used to generate the header image can be found in the maps folder </em>**
+**<em> alguns mapas e o mapa usado para gerar a imagem de cabeçalho podem ser encontrados na pasta de mapas </em>**
 
 
 ## Referências:
